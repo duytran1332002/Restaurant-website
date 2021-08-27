@@ -57,7 +57,7 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   body {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   h1 {
@@ -108,7 +108,6 @@ h3 {
   text-align: center;
   width: 100%;
   text-transform: capitalize;
-  background-color: var(--color-background);
   color: var(--color-white);
 }
 .title::before {
@@ -118,4 +117,30 @@ h3 {
   color: var(--color-main);
   font-weight: 400;
   font-size: 2.4rem;
+}
+
+/* food item */
+
+.food {
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 1.5rem 0;
+  border-bottom: 2px dashed var(--color-blue-dark);
+}
+.food__head {
+  display: flex;
+  align-items: center;
+}
+.food__head-image {
+  margin-right: 1rem;
+}
+.food__head-name {
+  color: var(--color-white);
+  text-transform: capitalize;
+}
+.food__price {
+  color: var(--color-main);
 }
