@@ -88,3 +88,16 @@ h3 {
   background-color: var(--color-main);
   color: var(--color-white);
 }
+
+/* grid */
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
