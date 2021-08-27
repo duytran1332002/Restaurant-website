@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@0,400;0,600;1,700&display=swap");
+/* some root variable */
+:root {
+  --color-background: #0c1023;
+  --color-blue-dark: #191f3a;
+  --color-main: #eaa023;
+  --color-white: #fff;
+  --color-white-lighter: #c8c8c8;
+  --shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  --font-cursive: "Dancing Script", cursive;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 2rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+p {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* typography */
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 2.3rem;
+  }
+
+  h1 {
+    font-size: 7.5rem;
+  }
+
+  h2 {
+    font-size: 6rem;
+  }
+
+  h3 {
+    font-size: 5rem;
+  }
+}
