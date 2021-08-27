@@ -14,12 +14,19 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   line-height: 1.5;
 }
 p {
   margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 *,
@@ -50,7 +57,7 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   body {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
   }
 
   h1 {
@@ -64,4 +71,20 @@ h3 {
   h3 {
     font-size: 5rem;
   }
+}
+
+/* button */
+
+.btn {
+  border: 2px solid var(--color-main);
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  color: var(--color-main);
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  background-color: var(--color-main);
+  color: var(--color-white);
 }
