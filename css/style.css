@@ -14,7 +14,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   line-height: 1.5;
 }
@@ -38,6 +38,9 @@ img {
 
 .min-vh-100 {
   min-height: 100vh;
+}
+.sec-padding {
+  padding: 8rem 0;
 }
 *,
 *::before,
@@ -67,9 +70,8 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   body {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
-
   h1 {
     font-size: 7.5rem;
   }
@@ -79,18 +81,20 @@ h3 {
   }
 
   h3 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
 /* button */
 
 .btn {
+  display: inline-block;
   border: 2px solid var(--color-main);
   border-radius: 3rem;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   color: var(--color-main);
   transition: all 0.3s ease;
+  line-height: 1.5;
   text-transform: capitalize;
 }
 
@@ -119,6 +123,7 @@ h3 {
   width: 100%;
   text-transform: capitalize;
   color: var(--color-white);
+  margin-bottom: 6rem;
 }
 .title::before {
   content: attr(data-title);
@@ -129,7 +134,12 @@ h3 {
   font-size: 2.4rem;
 }
 
-/* food item */
+@media screen and (min-width: 1024px) {
+  .title::before {
+    font-size: 3rem;
+  }
+}
+/* .d item */
 
 .food {
   background-color: var(--color-background);
@@ -137,7 +147,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   font-weight: 500;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   border-bottom: 2px dashed var(--color-blue-dark);
 }
 .food__head {
@@ -145,14 +155,21 @@ h3 {
   align-items: center;
 }
 .food__head-image {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  width: 90px;
+  object-fit: cover;
 }
 .food__head-name {
   color: var(--color-white);
+  display: block;
   text-transform: capitalize;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 .food__price {
   color: var(--color-main);
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .food:hover .food__head-name {
@@ -171,6 +188,8 @@ h3 {
   padding: 2.5rem;
   border: 2px solid var(--color-blue-dark);
   border-radius: 10px;
+  margin: 1.5rem 1.5rem;
+  transition: transform 0.3s ease;
 }
 .testi__title {
   display: flex;
@@ -204,7 +223,9 @@ h3 {
 .testi__rating i {
   color: var(--color-main);
 }
-
+.testimonial:hover {
+  transform: scale(1.1);
+}
 .testimonial:hover .testi__title-img {
   border-color: var(--color-main);
 }
@@ -212,25 +233,28 @@ h3 {
 /* member */
 .member {
   position: relative;
+  max-width: 80%;
+  margin: 4rem 1.5rem;
 }
 .member__image {
   border-radius: 10px;
+  width: 100%;
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
 }
 
 .member__infor {
-  background: var(--color-background);
+  background: var(--color-blue-dark);
   color: white;
-  width: 30rem;
   text-align: center;
   border-radius: 10px;
   padding: 1.5rem;
   font-weight: 600;
   position: absolute;
-  left: 18px;
+  left: 30px;
+  right: 30px;
   bottom: 0;
-  transform: translateY(40%);
+  transform: translateY(50%);
   line-height: 2;
   transition: all 0.3s ease;
 }
@@ -238,7 +262,6 @@ h3 {
 .member__infor::after {
   content: attr(data-content);
   display: block;
-  font-size: 1.8rem;
   color: var(--color-white-lighter);
   font-weight: 400;
 }
@@ -403,7 +426,7 @@ h3 {
   color: var(--color-white);
   margin: auto;
   width: 100%;
-  z-index: -1;
+  z-index: 1;
   max-width: 700px;
 }
 
@@ -416,4 +439,182 @@ h3 {
   color: var(--color-white-lighter);
   font-size: 1.8rem;
   margin-bottom: 3.5rem;
+}
+
+/* about */
+@keyframes loopCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.about {
+  background-color: var(--color-background);
+}
+
+.about__content {
+  color: var(--color-white);
+  margin: 0 1.5rem;
+}
+.about .btn {
+  margin-top: 1.5rem;
+}
+
+.about__content p {
+  color: var(--color-white-lighter);
+  margin-bottom: 1rem;
+}
+
+.about__img {
+  align-self: center;
+  position: relative;
+}
+.about__img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about__decor {
+  border: 3px solid var(--color-main);
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: calc(50% - 30px);
+  top: calc(50% - 30px);
+  animation: loopCircle 10s linear infinite;
+}
+
+.about__decor-text {
+  font-family: var(--font-cursive);
+  width: 100%;
+  font-size: 2.5rem;
+  position: absolute;
+  left: 50%;
+  max-width: 250px;
+  top: 50%;
+  transform: translate(-40%, -40%);
+  font-weight: bold;
+}
+@media screen and (min-width: 415px) {
+  .about__decor {
+    width: 100px;
+    height: 100px;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+  }
+  .about__decor-text {
+    font-size: 3rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .about .grid {
+    gap: 3rem;
+  }
+  .about__img {
+    margin: 0 1.5rem;
+  }
+}
+
+/* menu section */
+
+.menu {
+  background-color: var(--color-background);
+}
+
+.menu__tabs {
+  width: 100%;
+  text-align: center;
+}
+
+.menu__tab-item {
+  background: transparent;
+  color: var(--color-white);
+  border: none;
+  font-weight: 600;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+  padding: 1.5rem 1.5rem;
+  cursor: pointer;
+}
+.menu__tab-item.active {
+  color: var(--color-main);
+}
+.menu__tab-item:hover {
+  color: var(--color-main);
+}
+
+.menu__tab-content {
+  margin: 5rem 1rem 0 1rem;
+  display: none;
+}
+
+.menu__tab-content.active {
+  display: block;
+}
+.menu__tab-content .food {
+  width: 100%;
+}
+
+.menu__tab-content .food:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__tab-item {
+    font-size: 2.3rem;
+  }
+  .menu__tab-content .food {
+    width: 48%;
+  }
+  .menu__tab-content .food:nth-last-of-type(1),
+  .menu__tab-content .food:nth-last-of-type(2) {
+    border-bottom: none;
+  }
+
+  .menu__tab-content .flex--row {
+    justify-content: space-between;
+  }
+}
+
+/* testimonail */
+
+.testimonial-section {
+  background-color: var(--color-background);
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial-section .testimonial {
+    width: calc(50% - 30px);
+  }
+}
+
+@media screen and (min-width: 947px) {
+  .testimonial-section .testimonial {
+    width: calc((100% / 3) - 30px);
+  }
+}
+
+/* team section */
+
+.team {
+  background-color: var(--color-background);
+}
+.team .flex--row {
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .team .member {
+    width: calc(50% - 30px);
+  }
+}
+
+@media screen and (min-width: 947px) {
+  .team .member {
+    width: calc((100% / 3) - 30px);
+  }
 }
