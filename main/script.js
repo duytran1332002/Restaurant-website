@@ -6,6 +6,13 @@ function togglerNav() {
     navToggler.classList.toggle('active');
     document.querySelector('.nav-bar').classList.toggle('open');
 }
+window.addEventListener('load', function () {
+    document.querySelector(".page-loader").classList.add('fade-up');
+    this.setTimeout(function () {
+        document.querySelector('.page-loader').style.display='none'
+    }, 600)
+    AOS.init();
+});
 
 /* close nav when clicking on a nav item */
 document.addEventListener('click', function (e) {
@@ -25,6 +32,7 @@ menuTabs.addEventListener("click", function (e) {
         menuSection.querySelector(target).classList.add("active");
         
     }
+    AOS.init();
 })
 
 
@@ -34,6 +42,7 @@ window.addEventListener("scroll", function () {
     } else {
         document.querySelector('.head').classList.remove("sticky")
     }
+    
 })
 
 

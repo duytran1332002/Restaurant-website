@@ -9,7 +9,9 @@
   --shadow: 0 0 15px rgba(0, 0, 0, 0.25);
   --font-cursive: "Dancing Script", cursive;
 }
-
+/* -----------------
+global settings
+--------------*/
 html {
   font-size: 62.5%;
 }
@@ -295,7 +297,39 @@ h3 {
 .align-items--center {
   align-items: center;
 }
-
+/* page loader */
+@keyframes pageLoader {
+  0%,
+  100% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+}
+.page-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--color-background);
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  transition: all 0.6s ease;
+}
+.page-loader.fade-out {
+  opacity: 0;
+}
+.page-loader::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100px;
+  background-color: var(--color-main);
+  left: calc(50% - 50px);
+  top: calc(50% - 2px);
+  animation: pageLoader 1s linear infinite;
+}
 /* nav bar */
 
 .head {
@@ -616,5 +650,66 @@ h3 {
 @media screen and (min-width: 947px) {
   .team .member {
     width: calc((100% / 3) - 30px);
+  }
+}
+
+/* footer part */
+.footer {
+  background: url("../image/footer-bg.jpg");
+  padding: 8rem 0 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  z-index: -2;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  z-index: -1;
+}
+.contact-infor {
+  width: 100%;
+  color: var(--color-white-lighter);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.contact-infor__title {
+  color: var(--color-white);
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.contact-infor__icon {
+  font-size: 2.5rem;
+  color: var(--color-white);
+  margin: 2.5rem;
+}
+
+.contact-infor__icon i {
+  margin: 0 1rem;
+}
+
+.copyright {
+  width: 100%;
+  color: var(--color-white-lighter);
+  font-size: 1.6rem;
+  padding: 2.5rem;
+  border-top: 1px solid var(--color-white-lighter);
+}
+@media screen and (min-width: 768px) {
+  .contact-infor {
+    width: calc(100% / 3);
+  }
+  .contact-infor__title {
+    font-size: 3rem;
   }
 }
